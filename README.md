@@ -4,6 +4,8 @@ This repo contains my solutions to [advent of code](https://adventofcode.com/). 
 
 Overview:
 
+**2023:** Javascript. 6/50 stars.
+
 **2022:** Python, 35/50 stars.
 
 **2021:** C++, 4/50 stars.
