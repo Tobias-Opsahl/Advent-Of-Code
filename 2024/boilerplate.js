@@ -13,8 +13,8 @@ const readInput = async (filePath) => {
 };
 
 const processData = (data) => {
-    const lines = data.split("\n");
-    const processedData = [];
+	const lines = data.split("\n");
+	const processedData = [];
 	lines.forEach((line) => {
 		const words = line.split(/\s+/).map(Number);
 		processedData.push(words[0]);
@@ -25,6 +25,7 @@ const processData = (data) => {
 const main = async () => {
 	const data = await readInput(inputFilePath);
 	const processedData = processData(data);
+	console.log(processedData);
 };
 
 main();
