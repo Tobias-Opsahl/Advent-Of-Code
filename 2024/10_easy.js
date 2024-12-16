@@ -23,14 +23,16 @@ const processData = (data) => {
 };
 
 const walkTrailHead = (map, y, x, prevValue, visited) => {
-	if (x < 0 || x >= map[0].length || y < 0 || y >= map.length) { // OOB
+	if (x < 0 || x >= map[0].length || y < 0 || y >= map.length) {
+		// OOB
 		return 0;
 	}
 	if (visited[y][x]) {
 		return 0;
 	}
 	const value = map[y][x];
-	if ((value - prevValue) !== 1) {  // Hill not incremented by one
+	if (value - prevValue !== 1) {
+		// Hill not incremented by one
 		return 0;
 	}
 
@@ -44,7 +46,7 @@ const walkTrailHead = (map, y, x, prevValue, visited) => {
 	const leftPath = walkTrailHead(map, y, x - 1, value, visited);
 	// visited[y][x] = false;  // backtracking
 	return upPath + rightPath + downPath + leftPath;
-}
+};
 
 const makeVisitedArray = (height, width) => {
 	const visited = [];
@@ -56,14 +58,13 @@ const makeVisitedArray = (height, width) => {
 		visited.push(row);
 	}
 	return visited;
-}
+};
 
 const getTrailHeadScore = (map, y, x) => {
 	let visited = makeVisitedArray(map.length, map[0].length);
 	let score = walkTrailHead(map, y, x, -1, visited);
 	return score;
-}
-
+};
 
 const getAllScores = (map) => {
 	let sum = 0;
@@ -76,8 +77,9 @@ const getAllScores = (map) => {
 		}
 	}
 	return sum;
-}
+};
 
+// eslint-disable-next-line no-unused-vars
 const printMap = (map) => {
 	map.forEach((row) => {
 		const line = row.join("");
@@ -85,7 +87,6 @@ const printMap = (map) => {
 	});
 	console.log();
 };
-
 
 const main = async () => {
 	const data = await readInput(inputFilePath);

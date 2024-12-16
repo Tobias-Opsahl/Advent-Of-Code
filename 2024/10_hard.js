@@ -80,6 +80,7 @@ const getAllScores = (map) => {
 	return sum;
 };
 
+// eslint-disable-next-line no-unused-vars
 const printMap = (map) => {
 	map.forEach((row) => {
 		const line = row.join("");

@@ -64,12 +64,7 @@ const calculateSinglePrice = (machine) => {
 
 	let bPresses = (yGoal * a[0] - xGoal * a[1]) / (b[1] * a[0] - b[0] * a[1]);
 	let aPresses = (xGoal - bPresses * b[0]) / a[0];
-	if (
-		aPresses >= 0 &&
-		bPresses >= 0 &&
-		Number.isInteger(aPresses) &&
-		Number.isInteger(bPresses)
-	) {
+	if (aPresses >= 0 && bPresses >= 0 && Number.isInteger(aPresses) && Number.isInteger(bPresses)) {
 		return aPresses * aCost + bPresses * bCost;
 	}
 	return 0;

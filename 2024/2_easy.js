@@ -43,9 +43,7 @@ const checkIfReportIsDecreasing = (report) => {
 };
 
 const checkIfReportIsSafe = (report) => {
-	return (
-		checkIfReportIsIncreasing(report) || checkIfReportIsDecreasing(report)
-	);
+	return checkIfReportIsIncreasing(report) || checkIfReportIsDecreasing(report);
 };
 
 const countSafeReports = (reports) => {

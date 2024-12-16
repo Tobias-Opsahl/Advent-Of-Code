@@ -31,7 +31,7 @@ const findMuls = (instructions) => {
 
 const findDos = (instructions) => {
 	// Get content in the middle of do() - don't() blocks
-	const regex = /do\(\).*?don\'t\(\)/gs;
+	const regex = /do\(\).*?don't\(\)/gs;
 	const matches = [...instructions.matchAll(regex)];
 	const dos = matches.map((item) => {
 		return item[0];

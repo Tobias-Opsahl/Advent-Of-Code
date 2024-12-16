@@ -42,10 +42,10 @@ const makeRuleMap = (rules) => {
 		ruleMap.get(key).push(value);
 	});
 	return ruleMap;
-}
+};
 
 const checkOrder = (order, ruleMap) => {
-	const middleElement = order[(order.length - 1) / 2]
+	const middleElement = order[(order.length - 1) / 2];
 	for (let i = 0; i < order.length; i++) {
 		const value = order[i];
 		const ruleArray = ruleMap.get(value);
@@ -58,8 +58,8 @@ const checkOrder = (order, ruleMap) => {
 			}
 		}
 	}
-	return middleElement
-}
+	return middleElement;
+};
 
 const getCorrectOrder = (order, ruleMap) => {
 	while (checkOrder(order, ruleMap) === 0) {
@@ -84,17 +84,17 @@ const getCorrectOrder = (order, ruleMap) => {
 		}
 	}
 	return order;
-}
+};
 
 const getIncorrectOrders = (orders, ruleMap) => {
 	const incorrectOrders = [];
 	for (const order of orders) {
 		if (checkOrder(order, ruleMap) === 0) {
-			incorrectOrders.push(order)
+			incorrectOrders.push(order);
 		}
 	}
-	return incorrectOrders
-}
+	return incorrectOrders;
+};
 
 const calculateIncorrectOrders = (orders, ruleMap) => {
 	let sum = 0;
@@ -104,7 +104,7 @@ const calculateIncorrectOrders = (orders, ruleMap) => {
 		sum += correctOrder[(correctOrder.length - 1) / 2];
 	});
 	return sum;
-}
+};
 
 const main = async () => {
 	const data = await readInput(inputFilePath);

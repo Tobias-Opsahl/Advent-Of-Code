@@ -49,12 +49,7 @@ const isAntinodeInMap = (antinode, mapHeight, mapWidth) => {
 	return true;
 };
 
-const calculateAntinodesFromAntennaPair = (
-	antenna1,
-	antenna2,
-	mapHeight,
-	mapWidth
-) => {
+const calculateAntinodesFromAntennaPair = (antenna1, antenna2, mapHeight, mapWidth) => {
 	// This does NOT give every single antinode on a line if the coordinates have
 	// the same dx and dy, but not equal to one. If they differ by for instance
 	// 3 in both directions, then it will only iterate antinodes 3 steps away
@@ -99,17 +94,9 @@ const calculateAntinodes = (coordinates, antinodes, mapHeight, mapWidth) => {
 	}
 	for (let i = 0; i < coordinates.length; i++) {
 		for (let j = i + 1; j < coordinates.length; j++) {
-			const newAntinodes = calculateAntinodesFromAntennaPair(
-				coordinates[i],
-				coordinates[j],
-				mapHeight,
-				mapWidth
-			);
+			const newAntinodes = calculateAntinodesFromAntennaPair(coordinates[i], coordinates[j], mapHeight, mapWidth);
 			for (const antinode of newAntinodes) {
-				if (
-					isAntinodeInMap(antinode, mapHeight, mapWidth) &&
-					!hasCoordinate(antinodes, antinode)
-				) {
+				if (isAntinodeInMap(antinode, mapHeight, mapWidth) && !hasCoordinate(antinodes, antinode)) {
 					antinodes.push(antinode);
 				}
 			}
@@ -121,12 +108,7 @@ const calculateAntinodes = (coordinates, antinodes, mapHeight, mapWidth) => {
 const calculateAllAntinodes = (antennas, mapHeight, mapWidth) => {
 	let antinodes = [];
 	for (const coordinates of antennas.values()) {
-		antinodes = calculateAntinodes(
-			coordinates,
-			antinodes,
-			mapHeight,
-			mapWidth
-		);
+		antinodes = calculateAntinodes(coordinates, antinodes, mapHeight, mapWidth);
 	}
 	return antinodes;
 };
@@ -157,11 +139,7 @@ const main = async () => {
 	const data = await readInput(inputFilePath);
 	const map = processData(data);
 	const antennas = getAntennas(map);
-	const antinodes = calculateAllAntinodes(
-		antennas,
-		map.length,
-		map[0].length
-	);
+	const antinodes = calculateAllAntinodes(antennas, map.length, map[0].length);
 	const results = antinodes.length;
 	printMap(map);
 	printMapWithAntinodes(map, antinodes);

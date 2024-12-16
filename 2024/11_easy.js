@@ -31,14 +31,14 @@ const blink = (stones) => {
 		newStones.push(stone * 2024);
 	}
 	return newStones;
-}
+};
 
 const blink25times = (stones) => {
 	for (let i = 0; i < 25; i++) {
 		stones = blink(stones);
 	}
 	return stones;
-}
+};
 
 const processData = (data) => {
 	const stones = data.split(/\s+/).map(Number);

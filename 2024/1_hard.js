@@ -15,7 +15,7 @@ const readInput = async (filePath) => {
 const processData = (data) => {
 	const lines = data.split("\n");
 	const leftList = [];
-	const rightList = []
+	const rightList = [];
 	lines.forEach((line) => {
 		const words = line.split(/\s+/).map(Number);
 		leftList.push(words[0]);
@@ -25,25 +25,25 @@ const processData = (data) => {
 };
 
 const getListCounts = (list) => {
-    const counts = new Map();
-    list.forEach((item) => {
-        counts.set(item, (counts.get(item) ?? 0) + 1);
-    });
-    return counts;
-}
+	const counts = new Map();
+	list.forEach((item) => {
+		counts.set(item, (counts.get(item) ?? 0) + 1);
+	});
+	return counts;
+};
 
 const getSimilarityScore = (leftList, rightCounts) => {
-    let sum = 0;
-    leftList.forEach((item) => {
-        sum += item * (rightCounts.get(item) ?? 0);
-    });
-    return sum;
-}
+	let sum = 0;
+	leftList.forEach((item) => {
+		sum += item * (rightCounts.get(item) ?? 0);
+	});
+	return sum;
+};
 
 const main = async () => {
 	const data = await readInput(inputFilePath);
 	const [leftList, rightList] = processData(data);
-    const rightCounts = getListCounts(rightList);
+	const rightCounts = getListCounts(rightList);
 	const similarityScore = getSimilarityScore(leftList, rightCounts);
 	console.log(similarityScore);
 };

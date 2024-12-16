@@ -21,7 +21,7 @@ const processData = (data) => {
 		sumsArray.push(parseInt(sum, 10));
 		numbersArray.push(numbers.trim().split(/\s+/).map(Number));
 	});
-	return {sums: sumsArray, numbersArray: numbersArray};
+	return { sums: sumsArray, numbersArray: numbersArray };
 };
 
 const getNextOperants = (operants) => {
@@ -33,7 +33,7 @@ const getNextOperants = (operants) => {
 		operants[i] = 0;
 	}
 	return operants;
-}
+};
 
 const checkExhausted = (operants) => {
 	for (let i = 0; i < operants.length; i++) {
@@ -42,7 +42,7 @@ const checkExhausted = (operants) => {
 		}
 	}
 	return true;
-}
+};
 
 const checkSingleTest = (sum, numbers) => {
 	let operants = Array(numbers.length - 1).fill(0);
@@ -50,7 +50,8 @@ const checkSingleTest = (sum, numbers) => {
 	while (!exhausted) {
 		let candidateSum = numbers[0];
 		for (let i = 0; i < operants.length; i++) {
-			if (operants[i] === 0) {  // Plus
+			if (operants[i] === 0) {
+				// Plus
 				candidateSum = candidateSum + numbers[i + 1];
 			} else if (operants[i] === 1) {
 				candidateSum = candidateSum * numbers[i + 1];
@@ -63,7 +64,7 @@ const checkSingleTest = (sum, numbers) => {
 		operants = getNextOperants(operants);
 	}
 	return 0;
-}
+};
 
 const checkAllTests = (sums, numbersArray) => {
 	let totalSum = 0;
@@ -71,7 +72,7 @@ const checkAllTests = (sums, numbersArray) => {
 		totalSum += checkSingleTest(sums[i], numbersArray[i]);
 	}
 	return totalSum;
-}
+};
 
 const main = async () => {
 	const data = await readInput(inputFilePath);

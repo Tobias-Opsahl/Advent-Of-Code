@@ -28,13 +28,13 @@ const modulo = (n, m) => {
 
 const getNextPosition = (movement, y, x) => {
 	switch (movement) {
-		case 0:  // Up
+		case 0: // Up
 			return [y - 1, x];
-		case 1:  // Right
+		case 1: // Right
 			return [y, x + 1];
-		case 2:  // Down
+		case 2: // Down
 			return [y + 1, x];
-		case 3:  // Left
+		case 3: // Left
 			return [y, x - 1];
 		default:
 			throw new Error(`Invalid movement ${movement}. `);
@@ -88,7 +88,7 @@ const dfs = (maze, y, x, rotation, visited, cost, minCost) => {
 	}
 	// visited[y][x] = -1;
 	return Math.min(cost1, cost2, cost3);
-}
+};
 
 const makeVisitedArray = (height, width) => {
 	const visited = [];
@@ -100,7 +100,7 @@ const makeVisitedArray = (height, width) => {
 		visited.push(row);
 	}
 	return visited;
-}
+};
 
 const solveMaze = (maze) => {
 	const [y, x] = getReindeerPosition(maze);
@@ -108,8 +108,9 @@ const solveMaze = (maze) => {
 	const visited = makeVisitedArray(maze.length, maze[0].length);
 	const results = dfs(maze, y, x, rotation, visited, 0, -1);
 	return results;
-}
+};
 
+// eslint-disable-next-line no-unused-vars
 const printMaze = (map, visited) => {
 	const printArray = [];
 	for (let i = 0; i < map.length; i++) {

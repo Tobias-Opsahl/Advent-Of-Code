@@ -31,18 +31,8 @@ const checkSingleTestHelper = (sum, numbers, accumulated, step) => {
 		}
 		return 0;
 	}
-	const addBranch = checkSingleTestHelper(
-		sum,
-		numbers,
-		accumulated + numbers[step],
-		step + 1
-	);
-	const multiplicationBranch = checkSingleTestHelper(
-		sum,
-		numbers,
-		accumulated * numbers[step],
-		step + 1
-	);
+	const addBranch = checkSingleTestHelper(sum, numbers, accumulated + numbers[step], step + 1);
+	const multiplicationBranch = checkSingleTestHelper(sum, numbers, accumulated * numbers[step], step + 1);
 	const concatenationBranch = checkSingleTestHelper(
 		sum,
 		numbers,

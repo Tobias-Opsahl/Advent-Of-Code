@@ -49,10 +49,7 @@ const countColumns = (wordSearch) => {
 
 const countMainDiagonals = (wordSearch) => {
 	// Counts the two main diagonals
-	const n = Math.min(
-		wordSearch[0].length,
-		wordSearch.map((line) => line[0]).length
-	);  // In case of asymmetric matrix, which is not the case
+	const n = Math.min(wordSearch[0].length, wordSearch.map((line) => line[0]).length); // In case of asymmetric matrix, which is not the case
 	const diagonal1 = [];
 	const diagonal2 = [];
 	for (let i = 0; i < n; i++) {
@@ -60,17 +57,14 @@ const countMainDiagonals = (wordSearch) => {
 		diagonal2.push(wordSearch[i][n - 1 - i]);
 	}
 	return countXmasSingleLine(diagonal1) + countXmasSingleLine(diagonal2);
-}
+};
 
 const countDiagonals = (wordSearch, rowOffset, colOffset) => {
 	// Generic function for counting one fourth of the diagonals, excluding the
 	// two longest diagonals. If the offsets are false, will iterate from the
 	// top left to the middle. If `rowOffset` is true, will iterate from right,
 	// and if `colOffset` is true, will iterate up.
-	const n = Math.min(
-		wordSearch[0].length,
-		wordSearch.map((line) => line[0]).length
-	);  // In case of asymmetric matrix, which is not the case
+	const n = Math.min(wordSearch[0].length, wordSearch.map((line) => line[0]).length); // In case of asymmetric matrix, which is not the case
 	let rowStart, rowSign, colStart, colSign;
 	if (rowOffset) {
 		rowStart = n - 1;
@@ -90,9 +84,7 @@ const countDiagonals = (wordSearch, rowOffset, colOffset) => {
 	for (let i = 0; i < n - 1; i++) {
 		const diagonal = [];
 		for (let j = 0; j < i + 1; j++) {
-			diagonal.push(
-				wordSearch[rowStart + rowSign * j][colStart + colSign * (i - j)]
-			);
+			diagonal.push(wordSearch[rowStart + rowSign * j][colStart + colSign * (i - j)]);
 		}
 		sum += countXmasSingleLine(diagonal);
 	}

@@ -22,6 +22,7 @@ const processData = (data) => {
 	return processedData;
 };
 
+// eslint-disable-next-line no-unused-vars
 const printMap = (map) => {
 	map.forEach((row) => {
 		const line = row.join("");
@@ -42,12 +43,7 @@ const getStartingPosition = (grid) => {
 };
 
 const checkIfCompleted = (grid, position) => {
-	if (
-		position[0] < 0 ||
-		position[0] >= grid.length ||
-		position[1] < 0 ||
-		position[1] >= grid[0].length
-	) {
+	if (position[0] < 0 || position[0] >= grid.length || position[1] < 0 || position[1] >= grid[0].length) {
 		return true;
 	}
 	return false;

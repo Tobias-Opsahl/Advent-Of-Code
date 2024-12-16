@@ -73,8 +73,8 @@ const checkNeighbour = (visitedGrid, y, x) => {
 	if (!visitedGrid[y][x]) {
 		return 1;
 	}
-	return 0
-}
+	return 0;
+};
 
 const checkNeighbours = (visitedGrid, y, x) => {
 	let perimeter = 0;
@@ -83,7 +83,7 @@ const checkNeighbours = (visitedGrid, y, x) => {
 	perimeter += checkNeighbour(visitedGrid, y + 1, x);
 	perimeter += checkNeighbour(visitedGrid, y, x - 1);
 	return perimeter;
-}
+};
 
 const calculateFenceCost = (visitedGrid, visitedList) => {
 	const area = visitedList.length;
@@ -93,7 +93,7 @@ const calculateFenceCost = (visitedGrid, visitedList) => {
 	}
 	const cost = area * perimeter;
 	return cost;
-}
+};
 
 const findGardens = (map) => {
 	const totalVisited = makeVisitedGrid(map.length, map[0].length);
@@ -113,6 +113,7 @@ const findGardens = (map) => {
 	return cost;
 };
 
+// eslint-disable-next-line no-unused-vars
 const printMap = (map) => {
 	map.forEach((row) => {
 		const line = row.join("");

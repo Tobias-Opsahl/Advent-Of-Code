@@ -27,29 +27,17 @@ const countXmasGrid = (grid) => {
 	if (!(grid[1][1] === "A")) {
 		return 0;
 	}
-	if (
-		!(
-			(grid[0][0] === "M" && grid[2][2] === "S") ||
-			(grid[0][0] === "S" && grid[2][2] === "M")
-		)
-	) {
+	if (!((grid[0][0] === "M" && grid[2][2] === "S") || (grid[0][0] === "S" && grid[2][2] === "M"))) {
 		return 0;
 	}
-	if (
-		!(
-			(grid[2][0] === "M" && grid[0][2] === "S") ||
-			(grid[2][0] === "S" && grid[0][2] === "M")
-		)
-	) {
+	if (!((grid[2][0] === "M" && grid[0][2] === "S") || (grid[2][0] === "S" && grid[0][2] === "M"))) {
 		return 0;
 	}
 	return 1;
 };
 
 const makeSubGrid = (wordSearch, startRow, startCol, gridSize = 3) => {
-	const grid = wordSearch
-		.slice(startRow, startRow + gridSize)
-		.map((row) => row.slice(startCol, startCol + gridSize));
+	const grid = wordSearch.slice(startRow, startRow + gridSize).map((row) => row.slice(startCol, startCol + gridSize));
 	return grid;
 };
 

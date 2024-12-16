@@ -66,12 +66,7 @@ const getGardenCoordinates = (map, y, x) => {
 };
 
 const checkNeighbour = (visitedGrid, y, x, fenceList) => {
-	if (
-		x < 0 ||
-		x >= visitedGrid[0].length ||
-		y < 0 ||
-		y >= visitedGrid.length
-	) {
+	if (x < 0 || x >= visitedGrid[0].length || y < 0 || y >= visitedGrid.length) {
 		fenceList.push([y, x]);
 		return fenceList;
 	}
@@ -95,12 +90,7 @@ const checkNeighbours = (visitedGrid, y, x, fenceList) => {
 };
 
 const checkIfVisited = (visitedGrid, y, x) => {
-	if (
-		x < 0 ||
-		x >= visitedGrid[0].length ||
-		y < 0 ||
-		y >= visitedGrid.length
-	) {
+	if (x < 0 || x >= visitedGrid[0].length || y < 0 || y >= visitedGrid.length) {
 		return 0;
 	}
 	if (visitedGrid[y][x]) {
@@ -175,9 +165,7 @@ const calculateFenceCost = (visitedGrid, visitedList) => {
 	}
 	// Remove duplicates
 	const fenceSet = new Set(fenceList.map((item) => item.join(",")));
-	const uniqueFenceList = Array.from(fenceSet).map((item) =>
-		item.split(",").map(Number)
-	);
+	const uniqueFenceList = Array.from(fenceSet).map((item) => item.split(",").map(Number));
 	const corners = countCorners(visitedGrid, uniqueFenceList);
 	const cost = area * corners;
 	console.log(corners, cost);
@@ -202,6 +190,7 @@ const findGardens = (map) => {
 	return cost;
 };
 
+// eslint-disable-next-line no-unused-vars
 const printMap = (map) => {
 	map.forEach((row) => {
 		const line = row.join("");

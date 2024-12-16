@@ -58,7 +58,7 @@ const checkForLine = (map, lineLength) => {
 		}
 	}
 	return false;
-}
+};
 
 const printMap = (map, i) => {
 	console.log(i);

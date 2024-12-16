@@ -23,10 +23,10 @@ const makeStoneMap = (stones) => {
 		stoneMap.set(stone, (stoneMap.get(stone) ?? 0) + 1);
 	}
 	return stoneMap;
-}
+};
 
 const blink = (stoneMap) => {
-	const newStoneMap = new Map;
+	const newStoneMap = new Map();
 	for (const [stone, count] of stoneMap) {
 		if (stone == 0) {
 			newStoneMap.set(1, (newStoneMap.get(1) ?? 0) + count);
@@ -45,7 +45,7 @@ const blink = (stoneMap) => {
 		newStoneMap.set(stone * 2024, (newStoneMap.get(stone * 2024) ?? 0) + count);
 	}
 	return newStoneMap;
-}
+};
 
 const blink75times = (stones) => {
 	for (let i = 0; i < 75; i++) {
@@ -53,7 +53,7 @@ const blink75times = (stones) => {
 		stones = blink(stones);
 	}
 	return stones;
-}
+};
 
 const countStoneMap = (stoneMap) => {
 	let sum = 0;
@@ -61,7 +61,7 @@ const countStoneMap = (stoneMap) => {
 		sum += count;
 	}
 	return sum;
-}
+};
 
 const main = async () => {
 	const data = await readInput(inputFilePath);

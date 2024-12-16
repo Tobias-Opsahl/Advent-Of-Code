@@ -67,11 +67,12 @@ const moveFiles = (uncompressed) => {
 const computeChecksum = (files) => {
 	let sum = 0;
 	for (let i = 0; i < files.length; i++) {
-		sum += (files[i]) * (i);
+		sum += files[i] * i;
 	}
 	return sum;
-}
+};
 
+// eslint-disable-next-line no-unused-vars
 const printFileSystem = (files) => {
 	const line = files.join("");
 	console.log(line);

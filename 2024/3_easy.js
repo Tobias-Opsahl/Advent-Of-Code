@@ -18,14 +18,14 @@ const multiplyMul = (mul) => {
 	const content = mul.slice(start, end);
 	const numbers = content.split(",").map(Number);
 	return numbers[0] * numbers[1];
-}
+};
 
 const main = async () => {
 	const data = await readInput(inputFilePath);
 	const regex = /mul\(\d{1,3},\d{1,3}\)/g;
 	const matches = [...data.matchAll(regex)];
 	const muls = matches.map((item) => {
-		return item[0]
+		return item[0];
 	});
 	const product = muls.reduce((sum, item) => {
 		return sum + multiplyMul(item);

@@ -40,10 +40,10 @@ const getAntennas = (map) => {
 };
 
 const isAntinodeInMap = (antinode, mapHeight, mapWidth) => {
-	if ((antinode[0] < 0) || (antinode[0] >= mapHeight)) {
+	if (antinode[0] < 0 || antinode[0] >= mapHeight) {
 		return false;
 	}
-	if ((antinode[1] < 0) || (antinode[1] >= mapWidth)) {
+	if (antinode[1] < 0 || antinode[1] >= mapWidth) {
 		return false;
 	}
 	return true;
@@ -62,12 +62,12 @@ const calculateAntinodesFromAntennaPair = (antenna1, antenna2) => {
 
 const hasCoordinate = (antinodes, coordinate) => {
 	for (const antinode of antinodes) {
-		if ((antinode[0] === coordinate[0]) && (antinode[1] === coordinate[1])) {
+		if (antinode[0] === coordinate[0] && antinode[1] === coordinate[1]) {
 			return true;
 		}
 	}
 	return false;
-}
+};
 
 const calculateAntinodes = (coordinates, antinodes, mapHeight, mapWidth) => {
 	if (coordinates.length === 1) {
@@ -75,15 +75,9 @@ const calculateAntinodes = (coordinates, antinodes, mapHeight, mapWidth) => {
 	}
 	for (let i = 0; i < coordinates.length; i++) {
 		for (let j = i + 1; j < coordinates.length; j++) {
-			const newAntinodes = calculateAntinodesFromAntennaPair(
-				coordinates[i],
-				coordinates[j]
-			);
+			const newAntinodes = calculateAntinodesFromAntennaPair(coordinates[i], coordinates[j]);
 			for (const antinode of newAntinodes) {
-				if (
-					isAntinodeInMap(antinode, mapHeight, mapWidth) &&
-					!hasCoordinate(antinodes, antinode)
-				) {
+				if (isAntinodeInMap(antinode, mapHeight, mapWidth) && !hasCoordinate(antinodes, antinode)) {
 					antinodes.push(antinode);
 				}
 			}
@@ -95,12 +89,7 @@ const calculateAntinodes = (coordinates, antinodes, mapHeight, mapWidth) => {
 const calculateAllAntinodes = (antennas, mapHeight, mapWidth) => {
 	let antinodes = [];
 	for (const coordinates of antennas.values()) {
-		antinodes = calculateAntinodes(
-			coordinates,
-			antinodes,
-			mapHeight,
-			mapWidth
-		);
+		antinodes = calculateAntinodes(coordinates, antinodes, mapHeight, mapWidth);
 	}
 	return antinodes;
 };
@@ -125,7 +114,7 @@ const printMapWithAntinodes = (map, antinodes) => {
 		}
 	}
 	printMap(map);
-}
+};
 
 const main = async () => {
 	const data = await readInput(inputFilePath);
@@ -134,7 +123,7 @@ const main = async () => {
 	const antinodes = calculateAllAntinodes(antennas, map.length, map[0].length);
 	const results = antinodes.length;
 	printMap(map);
-	printMapWithAntinodes(map, antinodes)
+	printMapWithAntinodes(map, antinodes);
 	console.log(results);
 };
 

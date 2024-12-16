@@ -90,11 +90,12 @@ const computeChecksum = (files) => {
 		if (files[i] === ".") {
 			continue;
 		}
-		sum += (files[i]) * (i);
+		sum += files[i] * i;
 	}
 	return sum;
-}
+};
 
+// eslint-disable-next-line no-unused-vars
 const printFileSystem = (files) => {
 	const line = files.join("");
 	console.log(line);

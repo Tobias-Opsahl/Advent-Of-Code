@@ -56,9 +56,7 @@ const checkSingleTest = (sum, numbers) => {
 			} else if (operants[i] === 1) {
 				candidateSum = candidateSum * numbers[i + 1];
 			} else if (operants[i] === 2) {
-				candidateSum = parseInt(
-					String(candidateSum) + String(numbers[i + 1])
-				);
+				candidateSum = parseInt(String(candidateSum) + String(numbers[i + 1]));
 			}
 		}
 		if (candidateSum === sum) {

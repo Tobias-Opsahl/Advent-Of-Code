@@ -88,22 +88,8 @@ const moveBox = (map, y, x, movement, left, previousChar) => {
 		if (map[nextY][nextX] === "]") {
 			let leftResult;
 			let rightResult;
-			[leftResult, map] = moveBox(
-				map,
-				nextY,
-				nextX - 1,
-				movement,
-				true,
-				"."
-			);
-			[rightResult, map] = moveBox(
-				map,
-				nextY,
-				nextX,
-				movement,
-				false,
-				previousChar
-			);
+			[leftResult, map] = moveBox(map, nextY, nextX - 1, movement, true, ".");
+			[rightResult, map] = moveBox(map, nextY, nextX, movement, false, previousChar);
 			return [leftResult && rightResult, map];
 		}
 	}
@@ -114,22 +100,8 @@ const moveBox = (map, y, x, movement, left, previousChar) => {
 	if (map[nextY][nextX] === "[") {
 		let leftResults;
 		let rightResults;
-		[leftResults, map] = moveBox(
-			map,
-			nextY,
-			nextX,
-			movement,
-			true,
-			previousChar
-		);
-		[rightResults, map] = moveBox(
-			map,
-			nextY,
-			nextX + 1,
-			movement,
-			false,
-			"."
-		);
+		[leftResults, map] = moveBox(map, nextY, nextX, movement, true, previousChar);
+		[rightResults, map] = moveBox(map, nextY, nextX + 1, movement, false, ".");
 		return [leftResults && rightResults, map];
 	}
 };
@@ -243,9 +215,7 @@ const main = async () => {
 	const results = calculateScore(newMap);
 	printMap(newMap);
 	console.log(results);
-	console.log(movements.length)
-	// 1413559 too high
-	// 1423226
+	console.log(movements.length);
 };
 
 main();
