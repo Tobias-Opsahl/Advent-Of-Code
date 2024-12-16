@@ -18,7 +18,7 @@ for line in lines:
     second2 = int(second.split("-")[1])
 
     # Find some overlap
-    if not((first2 < second1) or (second2 < first1)):
+    if not ((first2 < second1) or (second2 < first1)):
         total_overlap += 1
     # This is the same as (first2 >= second1) and (second2 >= first1)
 

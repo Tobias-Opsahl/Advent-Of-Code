@@ -41,7 +41,7 @@ def check_lists(part1, part2):
         else:  # Two non-zero lists, check all ilements
             cond = None
             counter = 0
-            while(cond is None):  # Loop until one element determines order
+            while (cond is None):  # Loop until one element determines order
                 if len(part1) <= counter and len(part2) <= counter:
                     break  # Undetermined
                 elif len(part1) <= counter:

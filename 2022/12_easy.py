@@ -83,7 +83,7 @@ queue = [start_indices]
 visited = [[0 for _ in range(n_cols)] for _ in range(n_rows)]  # Nested visited structure
 visited[start_indices[0]][start_indices[1]] = 1  # Mark the starting point as visited
 
-while(condition and len(queue) > 0):
+while (condition and len(queue) > 0):
     current = queue.pop(0)  # Pop _first_ element in list
     if current == end_indices:  # We reached the goal
         condition = False  # This marks the completion because of goal found
@@ -98,7 +98,7 @@ while(condition and len(queue) > 0):
 # Backtrack v2
 current = end_indices
 path = []
-while(current != 1):
+while (current != 1):
     path.insert(0, current)
     current = visited[current[0]][current[1]]
 

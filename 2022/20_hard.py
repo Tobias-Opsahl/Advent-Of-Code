@@ -15,7 +15,7 @@ decryption_key = 811589153
 for line in lines:
     number = float(line) * decryption_key
     added = False
-    while(not added):
+    while (not added):
         if number not in numbers:
             numbers.append(number)
             added = True
@@ -45,7 +45,7 @@ def move(number_list, index):
     element = number_list.pop(find_index)  # Remove and get element
     # Note that number list has one less element now, but we want that
     new_index = (find_index + int(element)) % len(number_list)  # Places that it should be moved to
-    if new_index == 0:  # Somehow, this is a rule, which can be seen from the example 
+    if new_index == 0:  # Somehow, this is a rule, which can be seen from the example
         #  (does not matter in the final output though)
         new_index = length - 1
     # if new_index == length - 1:

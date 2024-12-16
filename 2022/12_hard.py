@@ -87,7 +87,7 @@ for i in range(n_rows):
             queue = [start_indices]
             visited = [[0 for _ in range(n_cols)] for _ in range(n_rows)]  # Nested visited structure
             visited[start_indices[0]][start_indices[1]] = 1  # Mark the starting point as visited
-            while(condition and len(queue) > 0):
+            while (condition and len(queue) > 0):
                 current = queue.pop(0)  # Pop _first_ element in list
                 if current == end_indices:
                     condition = False  # This marks that we have found a solution
@@ -103,7 +103,7 @@ for i in range(n_rows):
             if not condition:  # We might not have a solution, so test if we finished first.
                 current = end_indices
                 path = []
-                while(current != 1):  # Count the length of the path
+                while (current != 1):  # Count the length of the path
                     path.insert(0, current)
                     current = visited[current[0]][current[1]]
                 if (len(path) - 1) < shortest_path:  # Check if we found a shorter path

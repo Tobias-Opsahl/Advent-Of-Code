@@ -70,7 +70,7 @@ for line in lines:
                 for j in range(start, end + 1):  # Include both end-points
                     grid[y, reindex(j)] = 1  # Mark rock
             else:
-                raise Exception(f"This should not happen lol")
+                raise Exception("This should not happen lol")
             # Rocks are marked, not make prepare next coordinate
             prev_x = x
             prev_y = y
@@ -108,7 +108,7 @@ def add_sand(grid, sand_x, sand_y):
 
 counter = 0
 condition = True
-while(condition):
+while (condition):
     grid, condition = add_sand(grid, 500, 0)
     if condition:  # Still True, sand added
         counter += 1

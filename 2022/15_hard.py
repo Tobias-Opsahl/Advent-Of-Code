@@ -41,7 +41,7 @@ for line_index in range(max_size):
         print(f"{line_index=}")
     x = 0
     condition = True
-    while(condition):
+    while (condition):
         restart = False
         for pair in pairs:
             if x > max_size:  # Already over the amount we are interested in
