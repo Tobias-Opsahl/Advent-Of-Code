@@ -4,3 +4,4 @@
 **/node_modules/
 **/eslint.config.js
 **/.prettierrc
+**/inputs/*_input.txt
