@@ -26,6 +26,7 @@ const main = async () => {
 	const data = await readInput(inputFilePath);
 	const processedData = processData(data);
 	console.log(processedData);
+	"// eslint-disable-next-line no-unused-vars";
 };
 
 main();
