@@ -2,6 +2,14 @@
 
 This year's excersises will be mostly solved in Javascript and node.js, in order to learn the langauge. There are some repeated boilerplate code for reading and processing the input found in `boilerplate.js`. This could be used as a module for less copying.
 
+Day 17:
+    Task:
+        Part 1: Simulate simple 3 bit Turing machine.
+        Part 2: Find input A to Turing machine so that the output matches its input.
+    Solution:
+        Part 1: Simple implemenation of the Turing machine.
+        Part 2: I could not do this one by myself, and had to read up to understand the logic. After analysing the program, one can find out that the A modulo 8 gets outputed, and 8 gets divided by 8. The other inputs are irrelevant. Recursivly find which number in (0, 7) that produces the correct last digit of instructions. Multiply number by 8 and find number in (0, 7) that outputs second to last digit of instructions, and so on.
+
 Day 18:
     Task:
         Part 1: Find length of shortest path in 2d grid labyrinth.
