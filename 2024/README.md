@@ -64,12 +64,15 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
 
 **Day 23:**
 
-- Task:
-  - Part 1:
-  - Part 2:
+- Task: LAN connections.
+  - Part 1: Find every three-clique of computers in networks, and return the amount that has at least one computer starting with "t".
+  - Part 2: Find the largest n-clique in the graph.
 - Solution:
-  - Part 1:
-  - Part 2:
+  - Part 1: Find three cliques by checking if every connected node had a common node connection.
+  - Part 2: Generalize the function from part 1 to make a list of k-cliques given a list of k-1-cliques. For every pair of k-1-cliques, checks if there are exactly one node from each that is not in the other. If so, check if those two nodes has a connection. If yes, merge them and add as a k-clique. Runs extremely slow.
+- Used help: No.
+- Efficient solution: No.
+- Brute force: Yes, extremely. Took about 30 minutes to run. Must be brute forced in some way (NP-complete problem), but the solution can still be improved by a lot.
 
 **Day 24:**
 
