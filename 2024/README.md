@@ -2,7 +2,16 @@
 
 This year's excersises will be mostly solved in Javascript and node.js, in order to learn the langauge. There are some repeated boilerplate code for reading and processing the input found in `boilerplate.js`. This could be used as a module for less copying.
 
-**Day 17:**
+## Day 16:
+
+- Task:
+  - Part 1:
+  - Part 2:
+- Solution:
+  - Part 1:
+  - Part 2:
+
+## Day 17
 
 - Task: Simulate 3bit Turing machine.
   - Part 1: Simulate simple 3 bit Turing machine.
@@ -11,7 +20,7 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
   - Part 1: Simple implemenation of the Turing machine.
   - Part 2: I could not do this one by myself, and had to read up to understand the logic. After analysing the program, one can find out that the A modulo 8 gets outputed, and 8 gets divided by 8. The other inputs are irrelevant. Recursivly find which number in (0, 7) that produces the correct last digit of instructions. Multiply number by 8 and find number in (0, 7) that outputs second to last digit of instructions, and so on.
 
-**Day 18:**
+## Day 18
 
 - Task: Solve labyrinth of falling meteors in grid.
   - Part 1: Find length of shortest path in 2d grid labyrinth.
@@ -21,7 +30,7 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
   - Part 2: Iteratively add walls and check if BFS found a solution. Implement both with brute-force (add one and one) and binary search.
 - Efficient and elegant implementation: Yes.
 
-**Day 19:**
+## Day 19
 
 - Task: Arange towels.
   - Part 1: Given an array of string `towels`, count the amount of patterns in `patterns` (also strings) that can be created by combining strings in `towels`.
@@ -31,7 +40,7 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
   - Part 2: Recursive search with memoization. Do the same as in task 1, but instead of aborting the search when a pattern is made, increment counter and continue searching for other ways. In order to make the complexity linear and not exponential, dd memoization. When a subpattern is searched, add it and the amount of times it was matched to an object. When starting a search, first check if the subpattern is in that object and return the amount of times it was found if yes.
 - Efficient and elegant implementation: Yes.
 
-**Day 20:**
+## Day 20
 
 - Task: Find cheats in 2d maze.
   - Part 1: Find amount of possibilities to solve 2d maze where you are allowed to skip over one wall. Count skips that saved over 100 steps.
@@ -40,7 +49,7 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
   - Part 1: Solve the map with A-star (unecessary, but copied from day 18). Loop over maze and if it is a wall, remove it, solve with the new map and check if it is at least 100 steps faster than without the skip.
   - Part 2: First get the distances from the start in the map without cheats. Then loop over every combination of coordinates, and if they both are not a wall, and if the difference between the latter and the first minus manhattan distance is greater than 100, count the shortcut.
 
-**Day 21:**
+## Day 21
 
 - Task: Move robots with pads.
   - Part 1: Given a code and a keypad, provide instructions on how to navigate the keypad with a different keypad. Repeat twice.
@@ -50,7 +59,7 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
   - Part 2: I needed a lot of help from the subreddit on this one. Switch to python, so I can easily cache recursive calls with `@cahce`. Instead of calculating the path for a whole sequence at a time, only do one step, and end with an "A". Somehow the random part of the program still worked, and I am not sure why. I am not entierly convinced that I understand the recursion happening here.
 - Used help: Yes, a lot (part 2).
 
-**Day 22:**
+## Day 22
 
 - Task: Calculate moneky banana prices
   - Part 1: Given some steps of calculating the next number in the sequence, calculate 2000th number in sequence, for each initial number.
@@ -62,7 +71,7 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
 - Used help: No.
 - Brute-force: Yes, very.
 
-**Day 23:**
+## Day 23
 
 - Task: LAN connections.
   - Part 1: Find every three-clique of computers in networks, and return the amount that has at least one computer starting with "t".
@@ -72,22 +81,28 @@ This year's excersises will be mostly solved in Javascript and node.js, in order
   - Part 2: Generalize the function from part 1 to make a list of k-cliques given a list of k-1-cliques. For every pair of k-1-cliques, checks if there are exactly one node from each that is not in the other. If so, check if those two nodes has a connection. If yes, merge them and add as a k-clique. Runs extremely slow.
 - Used help: No.
 - Efficient solution: No.
+- Runs quickly: No, not at all.
 - Brute force: Yes, extremely. Took about 30 minutes to run. Must be brute forced in some way (NP-complete problem), but the solution can still be improved by a lot.
 
-**Day 24:**
+## Day 24
 
-- Task:
-  - Part 1:
-  - Part 2:
+- Task: Calculate and fix binary ripple-carry adder.
+  - Part 1: Use given register values and logical operations to compute the results of all operations, and then output the `z`-registers sorted.
+  - Part 2: The program is really supposed to perform binary addition with `x` and `y` into `z`, but in order to do that, four pairs of intstructions must be swapped (eight are wrong). Find those and print them in sorted order.
 - Solution:
-  - Part 1:
-  - Part 2:
+  - Part 1: Simply read the input and perform the operations. The order are scrambled, so if any of the register values in the operation is not yet set, simply increment to next operations. Perform a while loop until all operations are performed.
+  - Part 2: After looking up some help, I figured out this was a ripple-carry adder. The [Wikipedia page](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder) helped a lot, both about half adders, full adders and ripple-carry adders. I then made a program (inspired by another solution) that iterates over the operations, and based on what the input, operant and output is, determine if the rule is a mistake or not. This builds on the assumption that there are no unecessary rules in the program.
+- Used help: Yes, part two.
+- Runs quickly.
 
-**Day 25:**
+## Day 25
 
-- Task:
-  - Part 1:
-  - Part 2:
+- Task: Find possible key and lock pairs.
+  - Part 1: Given a lock or key design in a grid, determine how many pairs of keys and lock pair that matches. They match if each column does not overlap.
+  - Part 2: Get 49 stars.
 - Solution:
-  - Part 1:
-  - Part 2:
+  - Part 1: Read each key or lock as a grid and convert to integer representation, given by the amount of "#" in each column. Then simply iterate over all pairs of locks and grids and test if they match (they match if none of the columns exceed 5).
+  - Part 2: :)
+- Used help: No
+- Runs quickly: Yes.
+- :D

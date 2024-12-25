@@ -1,10 +1,10 @@
 # Advent of Code
 
-This repo contains my solutions to [advent of code](https://adventofcode.com/). They are not done rapidly or optimally, but in the style I feel like doing at the time. This is often with good codestyle and complexity, sometimes brute-forced, but sometimes with clever optimizations. Please read the README in the other folders and the files for more information.
+This repository contains my solutions to [Advent of Code](https://adventofcode.com/). They are not done rapidly or optimally, but in the style I feel like doing at the time. I usually prioritize good codestyle, learning a new language, and sometimes try to get an elegant solution and good complexity. I never try to solve the tasks as fast as possible.
 
 Overview:
 
-**2023:** Javascript. 32/50 stars.
+**2024:** Javascript. 50/50 stars.
 
 **2022:** Python, 35/50 stars.
 
