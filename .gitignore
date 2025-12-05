@@ -5,3 +5,5 @@
 **/eslint.config.js
 **/.prettierrc
 **/inputs/*_input.txt
+**/.DS_Store
+**/go.mod

@@ -4,6 +4,8 @@ This repository contains my solutions to [Advent of Code](https://adventofcode.c
 
 Overview:
 
+**2025:** GoLang. 10 starts.
+
 **2024:** Javascript. 50/50 stars.
 
 **2022:** Python, 35/50 stars.
