@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	err := Task5("5_input.txt", "b")
+	err := Task6("6_input.txt", "b")
 
 	if err != nil {
 		panic(err)
