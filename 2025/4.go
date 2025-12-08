@@ -4,24 +4,6 @@ import (
 	"errors"
 )
 
-func processData4(lines []string) [][]byte {
-	if len(lines) == 0 {
-		return [][]byte{}
-	}
-	nRows := len(lines)
-	nCols := len(lines[0])
-	data := make([][]byte, nRows)
-
-	for i, line := range lines {
-		data[i] = make([]byte, nCols)
-		for j := range nCols {
-			character := line[j]
-			data[i][j] = character
-		}
-	}
-	return data
-}
-
 func addPadding(data [][]byte) [][]byte {
 	nRows := len(data)
 	if nRows == 0 {
@@ -75,7 +57,7 @@ func Task4(filename, task string) error {
 	if err != nil {
 		return err
 	}
-	data := processData4(lines)
+	data := processGridData(lines)
 	data = addPadding(data)
 
 	nRows := len(data)
